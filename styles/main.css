@@ -228,11 +228,11 @@ body{
   color: green;
 }
 
-.check-icon.checked{
+.checked .check-icon{
   display: initial;
 }
 
-.uncheck-icon.checked{
+.checked .uncheck-icon{
   display: none;
 }
 
