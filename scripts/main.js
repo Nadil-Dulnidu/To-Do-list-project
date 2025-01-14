@@ -82,9 +82,3 @@ function saveStorage(){
   localStorage.setItem('todolist', JSON.stringify(todoList));
 };
 
-// get current year
-const date = new Date();
-const currentYear = date.getFullYear();
-const yearElemnt = selectElement('.copy-year');
-yearElemnt.innerHTML = currentYear;
-
