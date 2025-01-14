@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do list</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="styles/main.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
@@ -23,14 +23,32 @@
     <div class="inner-container-two inner-container-commen">
       <div class="inner-container-two-content inner-content-commen">
         <p class="second-title">Todo List</p>
-        <div class="list-area">
-          <div class="list-topics">
+        <div class="topic-area">
+          <div class="list-topics list-grid">
             <div class="topic-items">List</div>
             <div class="topic-items">Date</div>
             <div class="topic-items">Status</div>
             <div class="topic-items">Delete</div>
           </div>
-          <div class="list-items"></div>
+          <div class="todo-list-area">
+            
+            <div class="list-row-item list-grid">
+              <div class="list-items">Go to Gym</div>
+              <div class="list-items">20-09-2024</div>
+              <div class="list-items status-area">
+                <button class="check-btn btn">
+                  <i class="ri-checkbox-circle-line uncheck-icon"></i>
+                  <i class="ri-checkbox-circle-fill check-icon"></i>
+                </button>
+              </div>
+              <div class="list-items">
+                <button class="delete-btn btn">
+                  <i class="ri-delete-bin-line delete-icon"></i>
+                </button>
+              </div>
+            </div>
+            
+          </div>
         </div>
       </div>
     </div>
@@ -38,6 +56,6 @@
   <footer class="footer">
     <p>&copy; <span class="copy-year"></span> Nadil Dulnidu</p>
   </footer>
-  <script type="module" src="main.js"></script>
+  <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
