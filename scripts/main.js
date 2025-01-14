@@ -21,8 +21,8 @@ function renderTodoList(){
           <div class="list-row-item list-grid">
             <div class="list-items">${name}</div>
             <div class="list-items">${duedate}</div>
-            <div class="list-items status-area js-status-area">
-              <button class="check-btn btn js-check-btn">
+            <div class="list-items status-area js-status-area-${name}">
+              <button class="check-btn btn js-check-btn" data-item-id="${name}">
                 <i class="ri-checkbox-circle-line uncheck-icon"></i>
                 <i class="ri-checkbox-circle-fill check-icon"></i>
               </button>
@@ -47,12 +47,13 @@ function renderTodoList(){
 
       renderTodoList();
       saveStorage();
+      togglecheck();
     });
   });
 };
 
 const addelement = selectElement('.js-add-btn');
-addelement.addEventListener('click',()=>{addTodo()});
+addelement.addEventListener('click',()=>{addTodo();});
 
 function addTodo(){
   const nameElement = selectElement('.js-name-input');
@@ -78,20 +79,29 @@ const yearElemnt = selectElement('.copy-year');
 yearElemnt.innerHTML = currentYear;
 
 // toggle check btn
-const togglecheckBtn = selectElement('.js-check-btn');
-const statusElement  = selectElement('.js-status-area');
+const togglecheckBtn = document.querySelectorAll('.js-check-btn');
 const current = localStorage.getItem('current');
 
-if (current){
-  statusElement.classList.add('checked');
-}
+togglecheck();
 
-togglecheckBtn.addEventListener('click', ()=>{
-  statusElement.classList.toggle('checked');
-
-  if(statusElement.classList.contains('checked')){
-    localStorage.setItem('current', 'active');
-  }else{
-    localStorage.removeItem('current');
-  }
-});
+function togglecheck(){
+  togglecheckBtn.forEach((checkbtn)=>{
+    const todoName = checkbtn.dataset.itemId;
+    const statusElement  = selectElement(`.js-status-area-${todoName}`);
+    
+  
+    if (current){
+      statusElement.classList.add('checked');
+    }
+    checkbtn.addEventListener('click', ()=>{
+      
+      statusElement.classList.toggle('checked');
+      
+      if(statusElement.classList.contains('checked')){
+        localStorage.setItem('current', 'active');
+      }else{
+        localStorage.removeItem('current');
+      }
+    });
+  });
+};
