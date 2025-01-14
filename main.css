@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+*,
+*::after,
+*::before{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -30,7 +32,17 @@ body{
   font-family: var(--font-family);
 }
 
-.main-section{
+.btn{
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+::-webkit-calendar-picker-indicator{
+  cursor: pointer;
+}
+
+.main{
   max-width: 600px;
   margin: auto;
   position: relative;
@@ -101,8 +113,46 @@ body{
 
 .inner-container-one-content{
   height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .inner-container-two-content{
   height: 370px;
 }
+
+.input-common{
+  width: 300px;
+  border: none;
+  border-bottom: 2px solid var(--main-container-bg-color1);
+  padding: 5px 2px;
+  font-size: 17px;
+  color: var(--font-color3);
+}
+
+.text-box{
+  margin-top: 25px;
+}
+
+.date-box{
+  margin-top: 10px;
+}
+
+.add-btn{
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--font-color1);
+  background-color: var(--add-btn-color);
+  padding: 6px 60px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgb(235, 107, 90, 0.6);
+}
+
+.second-title{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
