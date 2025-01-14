@@ -13,19 +13,21 @@ function selectElement(selector){
 
 function renderTodoList(){
   let listItemDisplay = '';
-  todoList.forEach((todoObject)=>{
+  todoList.forEach((todoObject, id)=>{
     const name = todoObject.name;
     const duedate = todoObject.duedate;
-    if(name !== ''){
+    const index = id;
+    if(name.length !== 0){
       const html = `
           <div class="list-row-item list-grid">
             <div class="list-items">${name}</div>
             <div class="list-items">${duedate}</div>
-            <div class="list-items status-area js-status-area-${name}">
-              <button class="check-btn btn js-check-btn" data-item-id="${name}">
+            <div class="list-items status-area">
+              <input type="checkbox" id="${index}" class="checkbox js-check">
+              <label class="check-btn btn js-check-btn" for="${index}">
                 <i class="ri-checkbox-circle-line uncheck-icon"></i>
                 <i class="ri-checkbox-circle-fill check-icon"></i>
-              </button>
+              </label>
             </div>
             <div class="list-items">
               <button class="delete-btn js-delete-btn btn">
@@ -47,8 +49,16 @@ function renderTodoList(){
 
       renderTodoList();
       saveStorage();
-      togglecheck();
     });
+  });
+
+  document.querySelectorAll('.js-check')
+  .forEach((checkbtn, index)=>{
+    checkbtn.addEventListener('change', ()=>{
+      todoList[index].completed = checkbtn.checked;
+      saveStorage();
+    });
+    checkbtn.checked = todoList[index].completed;
   });
 };
 
@@ -61,7 +71,7 @@ function addTodo(){
   const dateElement = selectElement('.js-date-input');
   const duedate = dateElement.value;
 
-  todoList.push({name: name, duedate: duedate});
+  todoList.push({name: name, duedate: duedate, completed: false});
   nameElement.value = '';
 
   renderTodoList();
@@ -78,30 +88,3 @@ const currentYear = date.getFullYear();
 const yearElemnt = selectElement('.copy-year');
 yearElemnt.innerHTML = currentYear;
 
-// toggle check btn
-const togglecheckBtn = document.querySelectorAll('.js-check-btn');
-const current = localStorage.getItem('current');
-
-togglecheck();
-
-function togglecheck(){
-  togglecheckBtn.forEach((checkbtn)=>{
-    const todoName = checkbtn.dataset.itemId;
-    const statusElement  = selectElement(`.js-status-area-${todoName}`);
-    
-  
-    if (current){
-      statusElement.classList.add('checked');
-    }
-    checkbtn.addEventListener('click', ()=>{
-      
-      statusElement.classList.toggle('checked');
-      
-      if(statusElement.classList.contains('checked')){
-        localStorage.setItem('current', 'active');
-      }else{
-        localStorage.removeItem('current');
-      }
-    });
-  });
-};

@@ -32,6 +32,10 @@ body{
   font-family: var(--font-family);
 }
 
+.checkbox{
+  display: none;
+}
+
 .btn{
   cursor: pointer;
   border: none;
@@ -228,11 +232,11 @@ body{
   color: green;
 }
 
-.checked .check-icon{
+.checkbox:checked ~ .check-btn .check-icon{
   display: initial;
 }
 
-.checked .uncheck-icon{
+.checkbox:checked ~ .check-btn .uncheck-icon{
   display: none;
 }
 
