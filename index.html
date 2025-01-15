@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do list</title>
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/media.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-</head>
-<body>
-  <section class="main">
-    <div class="main-container">
-      <p class="main-title">TODO List</p>
-    </div>
-    <div class="second-container"></div>
-    <div class="inner-container-one inner-container-commen">
-      <div class="inner-container-one-content inner-content-commen">
-        <input type="text" placeholder="What would you like to do?" class="text-box input-common js-name-input">
-        <input type="date" class="date-box input-common js-date-input">
-        <button class="add-btn btn js-add-btn">Add</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do list</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/media.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="main">
+      <div class="main-container">
+        <p class="main-title">TODO List</p>
       </div>
-    </div>
-    <div class="inner-container-two inner-container-commen">
-      <div class="inner-container-two-content inner-content-commen">
-        <p class="second-title">Todo List</p>
-        <div class="topic-area">
-          <div class="list-topics list-grid">
-            <div class="topic-items">List</div>
-            <div class="topic-items">Date</div>
-            <div class="topic-items">Status</div>
-            <div class="topic-items">Delete</div>
-          </div>
-          <div class="todo-list-area js-list-display">
+      <div class="second-container"></div>
+      <div class="inner-container-one inner-container-commen">
+        <div class="inner-container-one-content inner-content-commen">
+          <input
+            type="text"
+            placeholder="What would you like to do?"
+            class="text-box input-common js-name-input"
+          />
+          <input type="date" class="date-box input-common js-date-input" />
+          <button class="add-btn btn js-add-btn">Add</button>
+        </div>
+      </div>
+      <div class="inner-container-two inner-container-commen">
+        <div class="inner-container-two-content inner-content-commen">
+          <p class="second-title">Todo List</p>
+          <div class="topic-area">
+            <div class="list-topics list-grid">
+              <div class="topic-items">List</div>
+              <div class="topic-items">Date</div>
+              <div class="topic-items">Status</div>
+              <div class="topic-items">Delete</div>
+            </div>
+            <div class="todo-list-area js-list-display"></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <script type="module" src="scripts/main.js"></script>
-</body>
+    </section>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
 </html>

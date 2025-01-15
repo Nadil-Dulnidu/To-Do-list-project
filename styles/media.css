@@ -1,126 +1,122 @@
 @media screen and (max-width: 768px) {
-
-  .main{
+  .main {
     max-width: 768px;
     margin: 0 auto;
   }
-  
-  .main-container{
+
+  .main-container {
     margin: 0;
     border-radius: 0;
   }
-  
-  .second-container{
+
+  .second-container {
     border-radius: 0;
     box-shadow: none;
     margin: 0;
     height: 100vh;
   }
-  
+
   .inner-content-commen,
   .list-topics,
-  .todo-list-area{
+  .todo-list-area {
     width: 600px;
   }
-  
-  .list-grid{
+
+  .list-grid {
     grid-template-columns: 200px 100px 90px 90px;
   }
 }
 
 @media screen and (max-width: 650px) {
-
-  .main{
+  .main {
     max-width: 100%;
   }
-  
+
   .inner-content-commen,
   .list-topics,
-  .todo-list-area{
+  .todo-list-area {
     width: 450px;
   }
 
-  .list-grid{
+  .list-grid {
     grid-template-columns: 120px 90px 60px 60px;
   }
 
-  .list-row-item{
+  .list-row-item {
     padding: 15px 50px;
   }
 }
 
 @media screen and (max-width: 478px) {
-
   .inner-content-commen,
   .list-topics,
-  .todo-list-area{
+  .todo-list-area {
     width: 360px;
   }
 
-  .list-grid{
+  .list-grid {
     grid-template-columns: 100px 80px 60px 60px;
     gap: 5px;
   }
 
-  .list-topics{
+  .list-topics {
     padding: 0 35px;
   }
 
-  .list-row-item{
+  .list-row-item {
     padding: 15px 35px;
   }
 
   .topic-items,
-  .list-items{
+  .list-items {
     font-size: 13px;
   }
   .check-btn,
-  .delete-btn{
+  .delete-btn {
     font-size: 14px;
   }
 
-  .add-btn{
+  .add-btn {
     font-size: 15px;
     padding: 6px 50px;
   }
 }
 
 @media screen and (max-width: 378px) {
-
   .inner-content-commen,
   .list-topics,
-  .todo-list-area{
+  .todo-list-area {
     width: 300px;
   }
 
-  .list-grid{
+  .list-grid {
     grid-template-columns: 90px 70px 50px 50px;
     gap: 2px;
   }
 
-  .list-topics{
+  .list-topics {
     padding: 0 20px;
   }
 
-  .list-row-item{
+  .list-row-item {
     padding: 15px 20px;
   }
 
   .topic-items,
-  .list-items{
+  .list-items {
     font-size: 12px;
   }
   .check-btn,
-  .delete-btn{
+  .delete-btn {
     font-size: 13px;
   }
 
-  .input-common{
+  .input-common {
     width: 280px;
     font-size: 13px;
   }
 
-  .add-btn{
+  .add-btn {
     font-size: 14px;
     padding: 6px 50px;
   }
