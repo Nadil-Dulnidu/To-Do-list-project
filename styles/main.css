@@ -217,11 +217,10 @@ body{
   color: green;
 }
 
-.checkbox:checked ~ .check-btn .check-icon{
+.checkbox:checked ~ .check-btn > .check-icon{
   display: initial;
 }
 
-.checkbox:checked ~ .check-btn .uncheck-icon{
+.checkbox:checked ~ .check-btn > .uncheck-icon{
   display: none;
 }
-

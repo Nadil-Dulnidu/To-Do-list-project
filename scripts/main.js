@@ -19,8 +19,8 @@ function renderTodoList(){
     const index = id;
     if(name.length !== 0){
       const html = `
-          <div class="list-row-item list-grid">
-            <div class="list-items">${name}</div>
+          <div class="list-row-item list-grid js-list-grid">
+            <div class="list-items list-one">${name}</div>
             <div class="list-items">${duedate}</div>
             <div class="list-items status-area">
               <input type="checkbox" id="${index}" class="checkbox js-check">
@@ -46,11 +46,12 @@ function renderTodoList(){
   .forEach((deleteBtn, index)=>{
     deleteBtn.addEventListener('click',()=>{
       todoList.splice(index, 1);
-
       renderTodoList();
       saveStorage();
     });
   });
+
+  const placeClass = selectElement('.js-list-grid');
 
   document.querySelectorAll('.js-check')
   .forEach((checkbtn, index)=>{
@@ -70,9 +71,10 @@ function addTodo(){
   const name = nameElement.value;
   const dateElement = selectElement('.js-date-input');
   const duedate = dateElement.value;
-
+  
   todoList.push({name: name, duedate: duedate, completed: false});
   nameElement.value = '';
+  dateElement.value = '';
 
   renderTodoList();
   saveStorage();
