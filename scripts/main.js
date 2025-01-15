@@ -39,9 +39,10 @@ function renderTodoList(){
         listItemDisplay += html;  
     }
   });
+
   const displayElement = selectElement('.js-list-display');
   displayElement.innerHTML = listItemDisplay;
-
+ 
   document.querySelectorAll('.js-delete-btn')
   .forEach((deleteBtn, index)=>{
     deleteBtn.addEventListener('click',()=>{

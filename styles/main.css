@@ -224,7 +224,3 @@ body{
 .checkbox:checked ~ .check-btn > .uncheck-icon{
   display: none;
 }
-
-.active .list-one{
-  text-decoration: line-through;
-}
